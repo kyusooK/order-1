@@ -43,15 +43,11 @@
                             
                             
                             
-                            
-                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
                             [ Id :  {{data.id }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Name :  {{data.name }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ Phone :  {{data.phone }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ Email :  {{data.email }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Address :  {{data.address }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
@@ -121,8 +117,6 @@
             
             this.newValue = {
                 'name': '',
-                'phone': '',
-                'email': '',
                 'address': '',
             }
         },

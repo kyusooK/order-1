@@ -109,8 +109,6 @@
             
             me.newValue = {
                 'name': '',
-                'phone': '',
-                'email': '',
                 'address': '',
             }
         },

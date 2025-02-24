@@ -9,12 +9,6 @@
                 <String label="Name" v-model="item.name" :editMode="editMode" @change="change" />
             </div>
             <div>
-                <String label="Phone" v-model="item.phone" :editMode="editMode" @change="change" />
-            </div>
-            <div>
-                <String label="Email" v-model="item.email" :editMode="editMode" @change="change" />
-            </div>
-            <div>
                 <String label="Address" v-model="item.address" :editMode="editMode" @change="change" />
             </div>
         </v-card-text>

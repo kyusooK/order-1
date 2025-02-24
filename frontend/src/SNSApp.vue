@@ -32,6 +32,17 @@
 
             <v-navigation-drawer app clipped flat v-model="sideBar">
                 <v-list>
+                    <v-list-item
+                        class="px-2"
+                        key="orders"
+                        to="/orders/orders"
+                        @click="changeUrl()"
+                        color="primary"
+                        style="font-weight:700;"
+                    >
+                        Order
+                    </v-list-item>
+
 
                 </v-list>
             </v-navigation-drawer>
@@ -90,6 +101,13 @@ export default {
         flipped: [],
         ImageUrl: '',
         aggregate: [
+            { 
+                title: 'Order', 
+                description: 'Order을 관리하는 화면입니다.', 
+                key: 'orders', 
+                route: '/orders/orders',
+                ImageUrl: '',
+            },
             
         ],
     }),

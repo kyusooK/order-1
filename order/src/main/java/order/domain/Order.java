@@ -21,10 +21,6 @@ public class Order {
 
     private String name;
 
-    private String phone;
-
-    private String email;
-
     private String address;
 
     public static OrderRepository repository() {
@@ -35,7 +31,7 @@ public class Order {
     }
 
     //<<< Clean Arch / Port Method
-    public void placeorder(PlaceorderCommand placeorderCommand) {
+    public void placeOrder(PlaceOrderCommand placeOrderCommand) {
         //implement business logic here:
 
     }

@@ -17,8 +17,6 @@
 
         <v-card-text style="background-color: white;">
             <String label="Name" v-model="value.name" :editMode="editMode" :inputUI="''"/>
-            <String label="Phone" v-model="value.phone" :editMode="editMode" :inputUI="''"/>
-            <String label="Email" v-model="value.email" :editMode="editMode" :inputUI="''"/>
             <String label="Address" v-model="value.address" :editMode="editMode" :inputUI="''"/>
         </v-card-text>
 
@@ -64,15 +62,15 @@
                 v-if="!editMode"
                 color="primary"
                 text
-                @click="openPlaceorder"
+                @click="openPlaceOrder"
             >
-                Placeorder
+                PlaceOrder
             </v-btn>
-            <v-dialog v-model="placeorderDiagram" width="500">
-                <PlaceorderCommand
-                    @closeDialog="closePlaceorder"
-                    @placeorder="placeorder"
-                ></PlaceorderCommand>
+            <v-dialog v-model="placeOrderDiagram" width="500">
+                <PlaceOrderCommand
+                    @closeDialog="closePlaceOrder"
+                    @placeOrder="placeOrder"
+                ></PlaceOrderCommand>
             </v-dialog>
             <v-btn
                 v-if="!editMode"
@@ -125,7 +123,7 @@
                 timeout: 5000,
                 text: '',
             },
-            placeorderDiagram: false,
+            placeOrderDiagram: false,
             updateOrderDiagram: false,
         }),
 	async created() {
@@ -224,7 +222,7 @@
             change(){
                 this.$emit('input', this.value);
             },
-            async placeorder() {
+            async placeOrder() {
                 try {
                     if(!this.offline){
                         var temp = await axios.post(axios.fixUrl(this.value._links['/placeorder'].href))

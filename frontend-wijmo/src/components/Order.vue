@@ -1,8 +1,6 @@
 <template>
     <div>
         <String label="Name" v-model="value.name" :editMode="editMode"/>
-        <String label="Phone" v-model="value.phone" :editMode="editMode"/>
-        <String label="Email" v-model="value.email" :editMode="editMode"/>
         <String label="Address" v-model="value.address" :editMode="editMode"/>
 
         <v-divider class="border-opacity-100 my-divider"></v-divider>

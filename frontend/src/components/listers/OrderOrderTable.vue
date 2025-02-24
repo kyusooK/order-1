@@ -68,8 +68,6 @@
                 [
                     { text: "id", value: "id" },
                     { text: "name", value: "name" },
-                    { text: "phone", value: "phone" },
-                    { text: "email", value: "email" },
                     { text: "address", value: "address" },
                 ],
             order : [],
@@ -89,8 +87,6 @@
 
             this.newValue = {
                 'name': '',
-                'phone': '',
-                'email': '',
                 'address': '',
             }
         },
