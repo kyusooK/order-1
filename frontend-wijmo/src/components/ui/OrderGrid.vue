@@ -11,15 +11,6 @@
             <v-btn  @click="editSelectedRow" class="contrast-primary-text" small color="primary" :disabled="!hasRole('')">
                 <v-icon small>mdi-pencil</v-icon>수정
             </v-btn>
-            <v-btn @click="placeOrderDialog = true" class="contrast-primary-text" small color="primary" >
-                <v-icon small>mdi-minus-circle-outline</v-icon>place order
-            </v-btn>
-            <v-dialog v-model="placeOrderDialog" width="500">
-                <PlaceOrderCommand
-                    @closeDialog="placeOrderDialog = false"
-                    @placeOrder="placeOrder"
-                ></PlaceOrderCommand>
-            </v-dialog>
             <v-btn @click="updateOrderDialog = true" class="contrast-primary-text" small color="primary" >
                 <v-icon small>mdi-minus-circle-outline</v-icon>update order
             </v-btn>
@@ -126,22 +117,11 @@ export default {
     },
     data: () => ({
         path: 'orders',
-        placeOrderDialog: false,
         updateOrderDialog: false,
     }),
     watch: {
     },
     methods:{
-        placeOrder(params){
-            try{
-                this.repository.invoke(this.getSelectedItem(), "/placeorder", params)
-                this.$EventBus.$emit('show-success','place order 성공적으로 처리되었습니다.')
-                this.placeOrderDialog = false
-            }catch(e){
-                this.$EventBus.$emit('show-error', e);
-            }
-            
-        },
         updateOrder(params){
             try{
                 this.repository.invoke(this.getSelectedItem(), "updateorder", params)

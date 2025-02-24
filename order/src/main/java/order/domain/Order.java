@@ -31,13 +31,6 @@ public class Order {
     }
 
     //<<< Clean Arch / Port Method
-    public void placeOrder(PlaceOrderCommand placeOrderCommand) {
-        //implement business logic here:
-
-    }
-
-    //>>> Clean Arch / Port Method
-    //<<< Clean Arch / Port Method
     public void updateOrder(UpdateOrderCommand updateOrderCommand) {
         //implement business logic here:
 
