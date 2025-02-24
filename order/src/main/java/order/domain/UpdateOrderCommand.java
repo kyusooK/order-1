@@ -7,6 +7,5 @@ import lombok.Data;
 @Data
 public class UpdateOrderCommand {
 
-    private Long id;
     private String address;
 }

@@ -5,7 +5,6 @@
         </v-card-title>
 
         <v-card-text>
-            <Number label="Id" v-model="value.id" :editMode="editMode"/>
             <String label="Address" v-model="value.address" :editMode="editMode"/>
         </v-card-text>
 
@@ -42,7 +41,6 @@
             value: {},
         }),
         created() {
-            this.value.id = 0;
             this.value.address = '';
         },
         watch: {
