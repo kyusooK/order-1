@@ -32,6 +32,7 @@ mvn spring-boot:run
 ## Test by API
 - order
 ```
+ http :8088/orders id="id"name="name"address="address"
 ```
 
 

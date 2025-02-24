@@ -11,14 +11,14 @@
             <v-btn  @click="editSelectedRow" class="contrast-primary-text" small color="primary" :disabled="!hasRole('')">
                 <v-icon small>mdi-pencil</v-icon>수정
             </v-btn>
-            <v-btn @click="placeorderDialog = true" class="contrast-primary-text" small color="primary" >
-                <v-icon small>mdi-minus-circle-outline</v-icon>placeorder
+            <v-btn @click="placeOrderDialog = true" class="contrast-primary-text" small color="primary" >
+                <v-icon small>mdi-minus-circle-outline</v-icon>place order
             </v-btn>
-            <v-dialog v-model="placeorderDialog" width="500">
-                <PlaceorderCommand
-                    @closeDialog="placeorderDialog = false"
-                    @placeorder="placeorder"
-                ></PlaceorderCommand>
+            <v-dialog v-model="placeOrderDialog" width="500">
+                <PlaceOrderCommand
+                    @closeDialog="placeOrderDialog = false"
+                    @placeOrder="placeOrder"
+                ></PlaceOrderCommand>
             </v-dialog>
             <v-btn @click="updateOrderDialog = true" class="contrast-primary-text" small color="primary" >
                 <v-icon small>mdi-minus-circle-outline</v-icon>update order
@@ -54,11 +54,9 @@
             style="margin-top:10px; max-height:65vh;"
             class="wj-felx-grid"
         >
-            <wj-flex-grid-filter :filterColumns="['RowHeader','name','phone','email','address',]" />
+            <wj-flex-grid-filter :filterColumns="['RowHeader','name','address',]" />
             <wj-flex-grid-cell-template cellType="RowHeader" v-slot="cell">{{cell.row.index + 1}}</wj-flex-grid-cell-template>
             <wj-flex-grid-column binding="name" header="Name" width="2*" :isReadOnly="true" align="center" />
-            <wj-flex-grid-column binding="phone" header="Phone" width="2*" :isReadOnly="true" align="center" />
-            <wj-flex-grid-column binding="email" header="Email" width="2*" :isReadOnly="true" align="center" />
             <wj-flex-grid-column binding="address" header="Address" width="2*" :isReadOnly="true" align="center" />
         </wj-flex-grid>
         <v-col>
@@ -128,17 +126,17 @@ export default {
     },
     data: () => ({
         path: 'orders',
-        placeorderDialog: false,
+        placeOrderDialog: false,
         updateOrderDialog: false,
     }),
     watch: {
     },
     methods:{
-        placeorder(params){
+        placeOrder(params){
             try{
                 this.repository.invoke(this.getSelectedItem(), "/placeorder", params)
-                this.$EventBus.$emit('show-success','placeorder 성공적으로 처리되었습니다.')
-                this.placeorderDialog = false
+                this.$EventBus.$emit('show-success','place order 성공적으로 처리되었습니다.')
+                this.placeOrderDialog = false
             }catch(e){
                 this.$EventBus.$emit('show-error', e);
             }

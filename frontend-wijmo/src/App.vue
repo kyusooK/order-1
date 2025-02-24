@@ -123,10 +123,15 @@ export default {
         menus: [
             { id: 'order', title: 'Order',
                 items: [
+                    { key: 'orders', url: '/orders', name: 'Order' },
                 ]
             },
         ],
         cards: [
+            {
+                text: "Order",
+                link: "/orders",
+            },
         ],
         activeMenu: null
     }),
