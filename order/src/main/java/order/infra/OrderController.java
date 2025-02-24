@@ -34,7 +34,7 @@ public class OrderController {
     @RequestMapping(value = "/orders/{id}/updateorder",
         method = RequestMethod.PUT,
         produces = "application/json;charset=UTF-8")
-    public Order updateOrder(@PathVariable(value = "id")  id, @RequestBody UpdateOrderCommand updateOrderCommand, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public Order updateOrder(@PathVariable(value = "id")Long id, @RequestBody UpdateOrderCommand updateOrderCommand, HttpServletRequest request, HttpServletResponse response) throws Exception {
             System.out.println("##### /order/updateOrder  called #####");
             Optional<Order> optionalOrder = orderRepository.findById(id);
             
